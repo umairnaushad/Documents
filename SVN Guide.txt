@@ -1,0 +1,149 @@
+This document contains most used SVN commands
+
+01) svn --version
+
+02) where svn
+
+03) SVN HELP
+	svn help import 								(Show help of import command)
+	svn help checkout
+
+04) SVN IMPORT
+	svn import LocalFolderPath "^/repo/trunk"
+	svn import LocalFolderPath SvnURL -m "Comment Message"
+
+05) SVN CHECKOUT
+    svn checkout "^/repo/trunk/folder"				(Creates working copy of folder, local files inside folder will be replaced)
+	svn checkout "^/repo/trunk/folder" FolderName	(Checkout into new folder FolderName)	
+	svn checkout SvnURL LocalFolderPath --force 	(--force is optional)
+	svn checkout SvnURL . --force 					(. for current local repository)
+	svn checkout SvnURL . --username bob
+   
+06) SVN UPDATE
+	svn update (Pulls changed files from server to local)
+	svn update "/path"
+	svn update -r9 "/path"							(Update to revision 9)
+	
+07) SVN ADD 
+	svn --force add . (Changes local unversioned files to versioned)   
+	svn add *										(Add all items in folder, and recurse but ignores versioned directories)
+	svn add itemname								(If itemname is folder, all subfolders and files will also be added)
+	svn add * --force								(Force recurse into versioned directories)
+	
+08) SVN DELETE, COPY, MOVE
+	svn delete "/path"
+	svn delete "/path" -m "Deleting" 				(Deletes with message “Deleting”)
+	svn copy "sourcepath" "targetpath"				(Copy source to target)
+	svn move "sourcepath" "targetpath"				(Move source to target)
+	SVN copy "source" "target" -m " " --parents
+
+09) SVN REVERT
+	svn revert "/path/filename"						(Reverts changes to file)
+	svn revert "/path/folder" -R 					(Reverts changes to folder recursivel)
+
+10) SVN LOG, BLAME
+	svn log "/path"									(Show log messages from repository)
+	svn blame "/path"								(Show commits with messages for path)
+
+11) SVN DIFF
+	svn diff "/path/file"							(See what has changed in "/path/file")
+	svn diff "/path/file@2" "/path/file@7"			(Compares file in revisions 2 and 7)
+	svn diff -r 2:7 "/path/folder"					(Compared all files in revisions 2 and 7)
+	svn diff -r 23:HEAD
+
+12) SVN MERGE
+	svn merge -r 2:7 "item" "/path/file"			(Apply the diff between revisions 2 and 7 of "item" to "/path/file")
+	svn merge "url1" "url2" "/path/file"			(Apply the diff between "url1" and "url2" to "/path/file")
+	
+	Merge Steps
+	a) svn switch SvnURL/Trunk						(Get fresh copy of trunk)
+	   svn update
+	b) svn merge "^repo/trunk" 						(Add trunk changes to local working copy) 
+	   svn merge --reintegrate SvnURL/BranchName
+	   svn merge "BranchPath" --reintegrate 		(Branch files merged with local copy of trunk)
+	c) svn commit -m "Comment Message"
+	
+	Merge changes from trunk
+	a) svn merge "^/repo/trunk"
+	b) svn commit -m "Comment Message"
+
+13) SVN COMMIT										(Puches changed versioned files from local to server)
+	svn commit "/path"								(Commit changes to file or folder)
+	svn commit -m "Message" "/path"					(Commit with message “Message”)
+	svn commit -N "/path"							(Commit changes to folder without recurse)
+	svn commit -m "Comment Message" 				(Final commit to branch)
+
+14) SVN INFO										(Shows local and server path information)
+	svn info ProjectURL
+	svn info https://...../svn/repo
+
+15) SVN SWITCH
+	svn switch "^/repo/branches/newbranch" 			(Local files modified as needed)
+    svn switch "^repo/trunk" 						(Use trunk as local working copy)
+
+16) SVN STATUS
+	svn status 										(List of changes you have made locally)
+	svn status -u 									(List if changes between server and local)
+
+17) Create a branch
+	a) svn copy LocalFolderPath SvnURL/BranchName -m "Comment Message"
+	   svn cp   LocalFolderPath SvnURL/BranchName -m "Comment Message"
+	b) svn switch SvnURL --ignore-ancestry
+	
+18) Remove a branch
+	svn rm SvnURL/BranchName -m "Message"
+	svn rm ^/
+	
+19) Creating release branch
+	a) svn copy "^/repo/trunk" "^/branches/rc/1.0.0" -m "Comment Message" --parents
+	b) svn switch "^/branches/rc/1.0.0"
+	
+20) Tagging the release
+	a) svn copy "^/repo/branches/rc/1.0.0" "^/repo/tags/release-1.0.0" -m "Comment Message" --parents
+
+21) Miscellaneous Commands ($ svn ... )
+	resolve "/path"
+	cleanup "/path"
+	lock "/path"
+	unlock "/path"
+	cat "/path"
+	status "/path"
+	Resolve conflict
+	Recursively remove
+	locks and complete
+	operations
+	Lock path
+	Unlock path
+	View file contents
+	Get path status
+
+
+
+Item and Property Statuses:
+	' '			No modifications
+	'A'			Addition
+	'D'			Deletion
+	'M'			Modified
+	'R'			Item replaced
+	'C'			In conflict
+	'X'			Externals definition
+	'I'			Ignored
+	'?'			Not in repository
+	'!'			Item missing
+	'~'			Object type changed
+
+
+
+Argument Shortcuts:
+	-m "Message"		--message
+	-q					--quiet
+	-v					--verbose
+	-r					--revision
+	-c					--change
+	-t					--transaction
+	-R					--recursive
+	-N					--non-recursive
+
+
+
+================================================== END OF FILE ==================================================

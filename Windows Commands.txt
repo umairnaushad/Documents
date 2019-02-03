@@ -1,0 +1,9 @@
+7Zip:
+
+01) Zip a folder name "Exe"
+	7z a zipFileName FolderNameToBeZipped
+	7z a Exe.zip Exe
+
+02) Extract Files
+	7z x zipFileName
+	7z x Exe.zip

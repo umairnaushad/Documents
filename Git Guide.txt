@@ -1,0 +1,125 @@
+This document contains most used Git commands
+
+git [command] [--flags] [arguments]
+
+				git add						git commit						git push
+Working Tree	--->>>		Staging Area	--->>>		Local Repository	--->>>		Remote Repository
+																			<<<---
+																			git clone
+
+Network Commmands:	clone, pull, push, fetch
+
+01) git help init
+
+02) GIT CONFIG <KEY>
+	git config --global user.name  "Pat"
+	git config --global user.email "Pat@email.com"
+	--system 	(Every repository for all users on you computer)
+	--global 	(Every repository that you use on your computer)
+	
+03) git init					(Initialize empty git repository in current working directory)
+
+04) git status					(To view the status of files in working tree and staging area)
+	git status -s
+
+05) GIT ADD						(Adds untracked or modified files to staging area)
+	git add file1.txt
+	git add folderName			(Add folder, subfolder and files recursively)
+	git add .					(Add entire directory recursively)
+	git add *					(Add except for files, whose name begin with a dot)
+
+06) GIT COMMIT					(Creates a snapshot of the current project and stores in local repository)
+	git commit -m "Message"		(-m for commit message or comment)
+
+07) GIT LOG						(To view commit history)
+	git log
+	git log --oneline
+	git log --oneline -2		(To view only two most recent views)
+
+08) GIT COMMIT
+	git status
+	git add
+	git commit
+	git log
+
+09) GIT CLONE					(To copy a remote repository to a local repository)
+	git clone https://git.emaratech.ze/repo/project.git
+
+10) GIT REMOTE
+	git remote --verbose or -v							(Display information about remote repositories associated with local repository)
+	git remote 
+
+11) GIT PUSH [-u] [<repository>] [<branch>]				(Writes commits for a branch to a remote repository)
+	git push -u origin master
+	git push --set-upstream origin featureX				(If featureX does not exists in remote)
+
+12) GIT PULL											(Combines git fetch and git merge FETCH_HEAD)(Combines fetch and merge)
+														(If objects are fetched, the tracking branch is merged into the current local branch)
+														(This is similar to a topic branch merging into a base branch)
+
+13) GIT FETCH											(Retrives new objects and references from another repository)
+														(Tracking branches are updated)
+	
+
+14) GIT TAG
+	git tag												(View all tags in the repository)
+	git tag <tagName> [<commit>]						(<commit> defaults to head)
+	git tag v1.0										(Tag the current commit)
+	git tag -a -m "Commit Message" v1.0					(Will be associated with current commit)
+	git push <remote> <tagName>							(Simple git push does not automatically transfer tags)
+	git push --tags
+
+15) GIT BRANCH
+	git branch											(Display local branch names)
+	git branch --all									(Display local and tracking branch names)
+	git branch featureX									(Create a branch named featureX)
+	git branch -d featureX								(Delete branch featureX)
+	git checkout -D featureX							(-D will leave dangling commits)
+
+16) GIT CHECKOUT featureX								(Updates the head reference. Updates the working tree with commits files)
+	git checkout -b featureX							(-b combines two commands which are git branch and git checkout)
+
+17) GIT RESET
+	git reset --hard									(Discard all local changes to all files permanently)
+
+18) GIT STASH
+	git stash											(Discard all local changes, but save them for possible re-use later)
+
+19) GIT CLEAN
+	git clean -f										(If you just clean untracked files)
+	git clean -f -d										(If you want to also remove directories)
+	git clean -f -X										(If you just want to remove ignored files)
+	git clean -f -x										(If you want to remove ignored as well as non-ignored files)
+
+20) Merging												(Fast forward merge, Merge commit, Squash merge, Rebase)
+	Fast Forward Merge:	Moves the base branch label to the tip of the topic branch. 
+						Possible only if no other commits have been made to the base branch sine branching
+	git checkout master
+	git merge master featureX
+	git branch -d featureX
+	
+	Merge Commit:		Combines the commits at the tips of the merged branches and places the result in the merge commit.
+						Will have multiple parents
+	git checkout master
+	git merge featureX
+	git branch -d featureX
+	
+	Squash Commit:		
+	Rebase:				
+
+21) Resolving Merge Conflicts
+	Involves three commits:
+	a) Make sure you are in master branch
+	b) Want to merge a feature branch back to master branch
+	
+	1) The tip of the current branch (B)- "ours" or "mine"
+	2) The tip of the branch to be merged (C)- "Theirs"
+	3) A common ancestor (A)- "merge base"
+	
+	1) Checkout master (or base branch)					(git checkout master)
+	2) Merge featureX									(git merge featureX)
+		a) CONFLICT - both modified fileA.txt
+	3) Manually open fileA.txt to resolve conflicts		
+	4) Stage fileA.txt									(git add fileA.txt)
+	5) Commit the merge commit							(git commit -m "Merge Conflicts")
+	6) Optionally delete featureX branch label			(git branch -d featureX)
