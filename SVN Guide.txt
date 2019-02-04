@@ -11,6 +11,7 @@ This document contains most used SVN commands
 04) SVN IMPORT
 	svn import LocalFolderPath "^/repo/trunk"
 	svn import LocalFolderPath SvnURL -m "Comment Message"
+	svn import "D:\BUILD_SERVER\test_dotnet_app_build\7zipCommand\Exe.zip" https://JLT01929L.emaratech.ae/svn/Artifacts/Dotnet_App_Build/Exe.zip -m "Add to SVN" 
 
 05) SVN CHECKOUT
     svn checkout "^/repo/trunk/folder"				(Creates working copy of folder, local files inside folder will be replaced)
@@ -20,12 +21,12 @@ This document contains most used SVN commands
 	svn checkout SvnURL . --username bob
    
 06) SVN UPDATE
-	svn update (Pulls changed files from server to local)
+	svn update (									(Pulls changed files from server to local)
 	svn update "/path"
 	svn update -r9 "/path"							(Update to revision 9)
 	
 07) SVN ADD 
-	svn --force add . (Changes local unversioned files to versioned)   
+	svn --force add . 								(Changes local unversioned files to versioned)   
 	svn add *										(Add all items in folder, and recurse but ignores versioned directories)
 	svn add itemname								(If itemname is folder, all subfolders and files will also be added)
 	svn add * --force								(Force recurse into versioned directories)
