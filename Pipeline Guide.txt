@@ -1,0 +1,9 @@
+1) Build Job Steps:
+	a) Discard old builds
+	b) Checkout from git
+	c) Build Code
+	d) Zip executables
+	d) Place Articafts
+		i) Copy zipped folder on deploy server
+		ii) or place zipped folder on deploy server
+	e) Send email to relevant recipants

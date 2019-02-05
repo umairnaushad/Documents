@@ -1,0 +1,28 @@
+Water Fall:
+	1) Requirements
+	2) Analysis and Design
+	3) Development
+	4) Testing
+	5) Deployment and Maintenance
+
+Agile is iterative and increment:
+
+Requirements						R	Requirements				R	Requirements				R
+Analysis and Design					E	Analysis and Design			E	Analysis and Design			E
+Development							L	Development					L	Development					L
+Testing								E	Testing						E	Testing						E
+Deployment and Maintenance			A	Deployment and Maintenance	A	Deployment and Maintenance	A
+									S								S								S
+									E								E								E
+									1								2								3
+
+Individual and interactions			over		processes and tools
+Working software 					over 		comprehensive documentation
+Customer collaboration				over		contract negotiation
+Respond to change					over		following a plan
+
+Read SCRUMGUIDE.ORG
+SCRUM:
+3 team roles	(product owner, scrum master, dev team member)
+5 events		(sprint, sprint planning, daily sprint, sprint review, sprint retrospective)
+3 artifacts		(product backlog, sprint backlog, product increment)
