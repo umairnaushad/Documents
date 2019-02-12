@@ -75,6 +75,7 @@ Network Commmands:	clone, pull, push, fetch
 	git branch --all									(Display local and tracking branch names)
 	git branch featureX									(Create a branch named featureX)
 	git branch -d featureX								(Delete branch featureX)
+	git push origin --delete featureX/login				(To delete a remote branch)
 	git checkout -D featureX							(-D will leave dangling commits)
 
 16) GIT CHECKOUT featureX								(Updates the head reference. Updates the working tree with commits files)
