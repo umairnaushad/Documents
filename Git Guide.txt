@@ -47,6 +47,7 @@ Network Commmands:	clone, pull, push, fetch
 
 10) GIT REMOTE
 	git remote --verbose or -v							(Display information about remote repositories associated with local repository)
+	git remote update origin --prune					(To update the local list of remote branches)
 	git remote 
 
 11) GIT PUSH [-u] [<repository>] [<branch>]				(Writes commits for a branch to a remote repository)
