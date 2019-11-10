@@ -1,0 +1,13 @@
+Dockerfile
+FROM name:tag
+RUN apk update && apk install curl
+
+1. docker build -t umair/alpine:1.0 .		(-t defines the tag, name of the image)
+
+docker run --rm -ti umair/alpine:1.0 /bin/sh
+	--rm 			is used to delete the container to be deleted after the task for it is completed
+	-d 				is used to run container in detached mode (Run container in background). 
+	-p 				is used to specify the port. (-p host:container)
+	-t              : Allocate a pseudo-tty
+	-i              : Keep STDIN open even if not attached
+	-ti 			: For interactive processes

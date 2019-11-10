@@ -1,0 +1,39 @@
+1.  docker ps
+	docker ps -a	Show all runnunig and stopped containers
+	docker ps -l	Show last exitd container
+	docker ps		Show current running containers
+
+2.  docker images	Show list of local images
+
+3.  docker run -ti image bash
+
+4.  docker kill $(docker ps -q)							(kill all running containers)
+	docker rm   $(docker ps -a -q)						(delete all stopped containers)
+	docker rmi  $(docker images -q)						(delete all images)
+
+6. 	docker logs ContainerName
+
+docker commit	Create new image
+docker commit ContaiberID
+docker commit containerId NewImageNme
+docker tag ImageID
+
+docker run -ti --volumes-from container1 ubuntu bash
+docker run --name container1-ti -v /shared-data ubuntu bash
+docker run -ti -v /users/umair/example:/shared-folder ubuntu bash
+docker run --rm -ti ubuntu sleep 5 	Delete the container when it exits
+docker run --rm -ti ubuntu bash c "sleep 3; echo al  done"
+docker run -d -ti ubuntu bash			Run detach container
+docker run --name mycintainername -d ubuntu bash -c "lose /etc/[assword"
+docker run --memory
+docker run --cpu-shares
+docker port conyainer_name\docker network create example
+docker run --rm -ti --net example --name server ubuntu:14.04 bash
+docker run --rm -ti --link server --net example --name client ubuntu:14.04 bash
+nc -lp 1234
+nc server 1234
+docker attach CintainerName
+docker exec -ti ContainerName bash	Execute a new process 
+
+
+docker search ubuntu	(Search images)

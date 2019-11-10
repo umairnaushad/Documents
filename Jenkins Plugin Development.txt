@@ -1,0 +1,19 @@
+1:)
+https://jenkins.io/doc/developer/tutorial/
+
+2:)
+https://www.youtube.com/watch?v=azyv183Ua6U
+
+3:
+https://medium.com/@baymac/setting-up-intellij-idea-for-jenkins-plugin-development-66a074bbe4a9
+Group Id = io.jenkins.archetypes
+Artifact Id = hello-world-plugin
+Version = 1.4
+https://www.youtube.com/watch?v=azyv183Ua6U (Plugin Development - Basics)
+
+4:
+https://www.baeldung.com/jenkins-custom-plugin
+
+5:
+http://www.matthiassommer.it/programming/jenkins-plugin-as-build-step-and-pipeline-compatible/
+
