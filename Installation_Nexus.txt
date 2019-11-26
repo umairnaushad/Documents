@@ -2,7 +2,8 @@
 
 01) INSTALL JAVA
 sudo apt-get update
-sudo apt install openjdk-11-jre-headless -y
+sudo apt install openjdk-8-jre-headless -y
+sudo update-java-alternatives -l
 
 02) DOWNLOAD NEXUS
 cd /opt
@@ -17,3 +18,24 @@ x means ex̲tract files from the archive.
 v means print the filenames v̲erbosely.
 f means the following argument is a f̱ilename.
 sudo mv /opt/nexus-3.19.1-01 /opt/nexus-3.19.1-01
+
+04) CREATE USER & CHANGE RIGHTS
+sudo adduser nexus
+sudo visudo
+sudo chown -R nexus:nexus /opt/nexus-3.19.1-01
+sudo chown -R nexus:nexus /opt/sonatype-work
+
+05) Add nexus as a service at boot time
+Add following line in file sudo vim /opt/nexus/bin/nexus.rc
+run_as_user="nexus" (file shold have only this line)
+
+06) CREATE SERVICE
+sudo ln -sf /opt/nexus-3.19.1-01/bin/nexus /etc/init.d/nexus
+
+07) Log in as a nexus user and start service
+su - nexus
+/etc/init.d/nexus start
+
+08) check the port is running or not using netstat command
+sudo netstat -plnt
+sudo netstat -plnt
