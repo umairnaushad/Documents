@@ -1,0 +1,19 @@
+# Ubuntu on AWS
+
+01) INSTALL JAVA
+sudo apt-get update
+sudo apt install openjdk-11-jre-headless -y
+
+02) DOWNLOAD NEXUS
+cd /opt
+sudo wget -O nexus-3.19.1.01.tar.gz http://download.sonatype.com/nexus/3/nexus-3.19.1-01-unix.tar.gz
+or
+sudo curl http://download.sonatype.com/nexus/3/nexus-3.19.1-01-unix.tar.gz -L -o nexus-3.19.1.01.tar.gz       (-L in case there is a redirect found)
+
+03) EXTRACT
+sudo tar -zxvf nexus-3.19.1-01-unix.tar.gz
+z means (un)z̲ip.
+x means ex̲tract files from the archive.
+v means print the filenames v̲erbosely.
+f means the following argument is a f̱ilename.
+sudo mv /opt/nexus-3.19.1-01 /opt/nexus-3.19.1-01
