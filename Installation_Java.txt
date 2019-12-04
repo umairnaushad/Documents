@@ -1,0 +1,48 @@
+###################################
+########## JAVA - UBUNTU ##########
+###################################
+
+01) Oracle JDK on Ubuntu:
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+
+02) Open JDK on Ubuntu:
+sudo apt install openjdk-11-jdk
+sudo apt install openjdk-11-jre
+
+03) Set JAVA_HOME
+sudo nano /etc/environment
+JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/"
+source /etc/environment
+echo $JAVA_HOME
+
+04) JDK Configurations
+update-java-alternatives --list			(List all installed versions)
+sudo update-alternatives --config java		(Select which JDK to use)
+
+05) Uninstall JDK
+sudo apt-get purge oracle-java8-installer
+sudo apt-get autoremove
+sudo dpkg --list | grep -i jdk
+sudo apt-get remove --auto-remove openjdk*	(Openjdk along with dependencies)
+sudo apt-get purge openjdk*			(Openjdk and it’s configuration files)
+sudo apt-get purge --auto-remove openjdk*
+
+
+
+#########################################
+########## JAVA - AMAZON LINUX ##########
+#########################################
+
+sudo amazon-linux-extras install java-openjdk11 or sudo yum install java-1.8.0-openjdk
+java -version
+alternatives --config java
+file $(which java)
+file /etc/alternatives/java
+file /usr/lib/jvm/java-11-openjdk-11.0.5.10-0.amzn2.x86_64/bin/java
+cd ~
+nano .bashrc (Add following two lines)
+export JAVA_HOME="/usr/lib/jvm/jdk-1.8.0-openjdk.x86_64"
+PATH=$JAVA_HOME/bin:$PATH
+source .bashrc
+
