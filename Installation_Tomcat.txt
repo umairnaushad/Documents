@@ -1,0 +1,55 @@
+###################################
+########## TOMCAT SERVER ##########
+###################################
+
+
+00) PREREQUISITES
+sudo apt update
+sudo apt install openjdk-11-jre-headless -y
+apt install wget -y
+
+
+01) DOWNLOAD AND INSTALL TOMCAT
+cd /tmp
+wget -O tomcat-9.0.29.tar.gz https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.29/bin/apache-tomcat-9.0.29.tar.gz
+sudo mkdir /opt/tomcat-9.0.29
+sudo tar -zvxf tomcat-9.0.29.tar.gz -C /opt/tomcat-9.0.29 --strip-components=1
+rm tomcat-9.0.29.tar.gz
+
+
+02) CRETAE TOMCAT GROUP AND USER
+su -
+ls -ltr
+chmod +x startup.sh
+chmod +x shutdown.sh
+sudo adduser tomcat
+su - tomcat
+cd /opt/tomcat-9.0.29/bin
+./startup.sh
+Goto http://ec2-3-15-227-61.us-east-2.compute.amazonaws.com:8080/ and verify tomcat is accessible
+
+
+03) CHANGE SERVER PORT (FROM 8080 TO 8090)
+cd /opt/tomcat-9.0.29/conf/
+nano server.xml
+./shutdown.sh
+./startup.sh
+
+
+04) ALLOW REMOTE ACCESS
+find / -name context.xml
+Comment out the value section in following two files:
+		(/opt/tomcat-9.0.29/webapps/manager/META-INF/context.xml)
+		(/opt/tomcat-9.0.29/webapps/host-manager/META-INF/context.xml)
+
+
+05) ALLOW ADMIN LOGIN
+nano /opt/tomcat-9.0.29/conf/tomcat-users.xml
+Add following:
+  <role rolename="manager-gui"/>
+  <role rolename="admin-gui"/>
+  <user username="tomcat" password="tomcat" roles="manager-gui,admin-gui"/>
+
+
+06) Help Link:
+https://devops4solutions.com/installation-of-tomcat-on-aws-ec2-linux-integration-with-jenkins/

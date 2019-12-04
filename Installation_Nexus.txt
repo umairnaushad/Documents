@@ -1,9 +1,7 @@
-# Ubuntu on AWS
+﻿# Ubuntu on AWS
 
-01) INSTALL JAVA
-sudo apt-get update
-sudo apt install openjdk-8-jre-headless -y
-sudo update-java-alternatives -l
+http://www.giorgiozamparelli.com/private-maven-repository-install-nexus-on-aws-ec2-amazon-linux/
+
 
 02) DOWNLOAD NEXUS
 cd /opt
@@ -17,7 +15,7 @@ z means (un)z̲ip.
 x means ex̲tract files from the archive.
 v means print the filenames v̲erbosely.
 f means the following argument is a f̱ilename.
-sudo mv /opt/nexus-3.19.1-01 /opt/nexus-3.19.1-01
+sudo mv /opt/nexus-3.19.1-01 /opt/nexus
 
 04) CREATE USER & CHANGE RIGHTS
 sudo adduser nexus
@@ -26,7 +24,7 @@ sudo chown -R nexus:nexus /opt/nexus-3.19.1-01
 sudo chown -R nexus:nexus /opt/sonatype-work
 
 05) Add nexus as a service at boot time
-Add following line in file sudo vim /opt/nexus/bin/nexus.rc
+sudo vim /opt/nexus/bin/nexus.rc
 run_as_user="nexus" (file shold have only this line)
 
 06) CREATE SERVICE
@@ -38,4 +36,8 @@ su - nexus
 
 08) check the port is running or not using netstat command
 sudo netstat -plnt
-sudo netstat -plnt
+netstat -nat | grep LISTEN
+nc -l 8081
+curl localhost:8081
+
+https://wiki.cantara.no/display/sysadm/Nexus+Installation+Guide+-+Amazon+EC2
