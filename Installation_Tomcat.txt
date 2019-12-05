@@ -85,6 +85,7 @@ ExecStop=/opt/tomcat-9.0.29/bin/shutdown.sh
 WantedBy=multi-user.target
 "
 sudo systemctl daemon-reload
+systemctl start tomcat
 systemctl status tomcat
 sudo systemctl enable tomcat
 
