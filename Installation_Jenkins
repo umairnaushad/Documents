@@ -1,0 +1,38 @@
+###################################
+########## JENKINS ##########
+###################################
+
+00) PREREQUISITES
+sudo apt update
+sudo apt install openjdk-11-jre-headless -y
+apt install wget -y
+
+
+
+01) 
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+
+
+02) 
+deb https://pkg.jenkins.io/debian binary/
+
+
+03) 
+sudo apt-get update
+sudo apt-get install jenkins
+
+
+04) Starting the Jenkins Server
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+
+05) Configuring the Firewall Settings
+sudo ufw allow 8080
+sudo ufw status
+sudo ufw enable
+
+
+06) UNLOCK JENKINS
+ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
