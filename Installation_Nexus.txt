@@ -41,3 +41,19 @@ nc -l 8081
 curl localhost:8081
 
 https://wiki.cantara.no/display/sysadm/Nexus+Installation+Guide+-+Amazon+EC2
+
+
+###############################
+########## ON DOCKER ##########
+###############################
+
+00) INSTALL DOCKER
+sudo apt install docker.io 
+
+01) 
+docker run -d -p 8081:8081 -p 8083:8083 -v /opt/my-nexus-data:/nexus-data --name my-nexus sonatype/nexus
+
+02) 
+curl -u admin:admin123 http://localhost:8081/nexus/service/metrics/ping
+
+https://foxutech.com/how-to-run-nexus-repository-manager-on-docker/
