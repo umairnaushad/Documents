@@ -25,7 +25,7 @@ sudo apt-get purge oracle-java8-installer
 sudo apt-get autoremove
 sudo dpkg --list | grep -i jdk
 sudo apt-get remove --auto-remove openjdk*	(Openjdk along with dependencies)
-sudo apt-get purge openjdk*			(Openjdk and it’s configuration files)
+sudo apt-get purge openjdk*			(Openjdk and itâ€™s configuration files)
 sudo apt-get purge --auto-remove openjdk*
 
 
@@ -46,3 +46,11 @@ export JAVA_HOME="/usr/lib/jvm/jdk-1.8.0-openjdk.x86_64"
 PATH=$JAVA_HOME/bin:$PATH
 source .bashrc
 
+
+#########################################
+########## JAVA - REDHAT UNINS ##########
+#########################################
+
+rpm -qa | grep java
+rpm -qa | grep jdk
+yum remove jdk1.7.0
