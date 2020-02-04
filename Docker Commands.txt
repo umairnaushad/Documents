@@ -11,7 +11,12 @@
 	docker rm   $(docker ps -a -q)						(delete all stopped containers)
 	docker rmi  $(docker images -q)						(delete all images)
 
-6. 	docker logs ContainerName
+6.  docker logs ContainerName
+
+7. docker system prune -a
+	docker images purge
+	docker image ls -a
+
 
 docker commit	Create new image
 docker commit ContaiberID
