@@ -1,0 +1,9 @@
+Deploy angular on using docker-file:
+nginx
+tomcat
+IIS
+golang
+heroku
+
+
+Specify folder name in nginx
