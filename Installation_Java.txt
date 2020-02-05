@@ -54,3 +54,6 @@ source .bashrc
 rpm -qa | grep java
 rpm -qa | grep jdk
 yum remove jdk1.7.0
+
+yum install java-1.8.0-openjdk  (Only runtime)
+yum install java-1.8.0-openjdk-devel  (complete)
