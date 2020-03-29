@@ -1,2 +1,14 @@
-1) docker version
-2) docker info
+1)  docker version
+2)  docker info
+3)  docker container run --publish 80:80 nginx
+    docker container run --publush 80:80 --detach nginx
+    docker container run --publish 80:90 --detach --name webhost nginx
+4)  docker container stop container_id
+5)  docker container ls
+    docker container ls -a
+6)  docker container logs container_name
+    docker container logs webhost
+7)  docker container top container_name
+    docker container top webhost
+8)  docker container rm container1_id container2_id ...
+    docker container rm --force container1_id
