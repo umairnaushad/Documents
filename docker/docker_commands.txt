@@ -13,6 +13,5 @@
     docker container rm --force container1_id
 
 9)  docker container top container_name         (process list in one container)
-    docker container top webhost
-10) docker container inspect webhost            (detail of one container configuration)
+10) docker container inspect container_name     (detail of one container configuration)
 11) docker container stats                      (performance stats of all containers)
