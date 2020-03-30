@@ -9,9 +9,10 @@
     docker container ls -a
 7)  docker container logs container_name
     docker container logs webhost
-8)  docker container top container_name
-    docker container top webhost
-9)  docker container rm container1_id container2_id ...
+8)  docker container rm container1_id container2_id ...
     docker container rm --force container1_id
 
-10) docker 
+9)  docker container top container_name         (process list in one container)
+    docker container top webhost
+10) docker container inspect webhost            (detail of one container configuration)
+11) docker container stats                      (performance stats of all containers)
