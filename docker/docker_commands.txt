@@ -12,6 +12,11 @@
 8)  docker container rm container1_id container2_id ...
     docker container rm --force container1_id
 
-9)  docker container top container_name         (process list in one container)
-10) docker container inspect container_name     (detail of one container configuration)
-11) docker container stats                      (performance stats of all containers)
+20) docker container top container_name         (process list in one container)
+21) docker container inspect container_name     (detail of one container configuration)
+22) docker container stats                      (performance stats of all containers)
+
+
+30) docker container run -it                    (start new container interactivily)
+31) docker container exec -it                   (run additional process inside the container)
+32) docker container start -ai container_name   (start a stopped container interactivily)
