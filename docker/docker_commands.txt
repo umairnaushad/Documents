@@ -12,11 +12,22 @@
 8)  docker container rm container1_id container2_id ...
     docker container rm --force container1_id
 
+
 20) docker container top container_name         (process list in one container)
 21) docker container inspect container_name     (detail of one container configuration)
 22) docker container stats                      (performance stats of all containers)
 
 
 30) docker container run -it                    (start new container interactivily)
+    docker container run -it --rm container_name
 31) docker container exec -it                   (run additional process inside the container)
 32) docker container start -ai container_name   (start a stopped container interactivily)
+33) docker container port container_name
+34) docker container inspect --format '{{.NetworkSettings.IPAddress}}' container_name
+
+
+50) docker network ls
+51) docker network inspect
+52) docker network create --driver
+53) docker network connect
+54) docker network disconnect
