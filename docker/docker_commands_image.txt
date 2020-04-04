@@ -1,0 +1,12 @@
+1)  docker image ls
+2)  docker image history container_name
+3)  docker image inspect container_name
+4)  docker image tag nginx:latest umairnaushad/nginx
+
+5)  docker image build -t imageName .
+    docker image build -t imageName -f DockerfileName
+
+6)  docker image prune        (to remove up dangling images)
+    docker image prune -a     (to remove all images not using)
+7)  docker system prune       (to remove up everything)
+8)  docker system df          (to see space usage)
