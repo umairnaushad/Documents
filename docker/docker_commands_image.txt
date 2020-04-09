@@ -10,3 +10,10 @@
     docker image prune -a     (to remove all images not using)
 7)  docker system prune       (to remove up everything)
 8)  docker system df          (to see space usage)
+
+
+20) docker-compose up
+    docker-compose up -d
+    docker-compose up --build
+21) docker-conpose down
+    docker-compose down --rmi local
