@@ -18,7 +18,7 @@
 21) docker-conpose down
     docker-compose down --rmi local
     
-31) docker swarn init --aadress-adr 192.168.1.x
+31) docker swarn init --advertise-adr 192.168.1.x
 32) docker node ls
 
 41) docker service create alpine ping 8.8.8.8
