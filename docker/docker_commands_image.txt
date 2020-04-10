@@ -18,9 +18,16 @@
 21) docker-conpose down
     docker-compose down --rmi local
     
-31) docker swarn
+31) docker swarn init --aadress-adr 192.168.1.x
+32) docker node ls
+
+41) docker service create alpine ping 8.8.8.8
+42) docker service ls
+43) docker service ps <name>
+44) docker service update <ID> --replicas 3
 
 
-41) docker-machine create node1     (virtual box should be installed for this)
-42) docker-machine ssh node1
-43) docker-machine env node1
+
+51) docker-machine create node1     (virtual box should be installed for this)
+52) docker-machine ssh node1
+53) docker-machine env node1
