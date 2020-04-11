@@ -1,10 +1,10 @@
 1)  docker image ls
-2)  docker image history container_name
-3)  docker image inspect container_name
+2)  docker image history <containerName>
+3)  docker image inspect <containerName>
 4)  docker image tag nginx:latest umairnaushad/nginx
 
-5)  docker image build -t imageName .
-    docker image build -t imageName -f DockerfileName
+5)  docker image build -t <imageName> .
+    docker image build -t <imageName> -f DockerfileName
 
 6)  docker image prune        (to remove up dangling images)
     docker image prune -a     (to remove all images not using)
@@ -25,11 +25,11 @@
 
 41) docker service create alpine ping 8.8.8.8
 42) docker service ls
-43) docker service ps <name>
+43) docker service ps <ID>
 44) docker service update <ID> --replicas 3
 
 
 
-51) docker-machine create node1     (virtual box should be installed for this)
-52) docker-machine ssh node1
-53) docker-machine env node1
+51) docker-machine create <NAME>     (virtual box should be installed for this)
+52) docker-machine ssh <NAME>
+53) docker-machine env <NAME>
