@@ -33,3 +33,6 @@
 51) docker-machine create <NAME>     (virtual box should be installed for this)
 52) docker-machine ssh <NAME>
 53) docker-machine env <NAME>
+
+61) docker network create <name>
+62) docker network create --driver overlay <name>
