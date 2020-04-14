@@ -36,3 +36,5 @@
 
 61) docker network create <name>
 62) docker network create --driver overlay <name>
+
+71) localhost:5000/v2/_catalog      (To view repositries in a local repository)
