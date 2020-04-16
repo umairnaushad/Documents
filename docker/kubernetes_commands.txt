@@ -1,0 +1,8 @@
+01) kubectl run <podsName> --image nginx
+02) kubectl get pods
+    kubectl get all
+03) kubectl delete pod <podName>
+    kubectl delete pod,service <podName> <serviceName>
+    kubectl delete <deploymentName>
+04) kubectl create deployment <deploymentName> --image nginx
+    
