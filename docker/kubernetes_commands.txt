@@ -5,4 +5,10 @@
     kubectl delete pod,service <podName> <serviceName>
     kubectl delete <deploymentName>
 04) kubectl create deployment <deploymentName> --image nginx
-    
+05) kubectl scale  deployment <deploymentName> --replicas 2
+06) kubectl logs <podName>
+    kubectl logs <podName> --follow --tail 1
+07) kubectl describe pod/<podName>
+
+08) kubectl expose <deploymentName> --port 8888
+    kubectl expose <deploymentName> --port 8888 --name <name> --type NodePort
