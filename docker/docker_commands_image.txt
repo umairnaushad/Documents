@@ -18,10 +18,7 @@
 21) docker-conpose down
     docker-compose down --rmi local
     
-31) docker swarm init --advertise-adr 192.168.1.x
-32) docker swarm join-token manager
-33) docker node ls
-34) docker node update --role manager node3
+
 
 41) docker service create alpine ping 8.8.8.8
 42) docker service ls
@@ -30,9 +27,6 @@
 
 
 
-51) docker-machine create <NAME>     (virtual box should be installed for this)
-52) docker-machine ssh <NAME>
-53) docker-machine env <NAME>
 
 61) docker network create <name>
 62) docker network create --driver overlay <name>
