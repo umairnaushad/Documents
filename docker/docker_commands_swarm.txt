@@ -1,0 +1,9 @@
+01) docker swarm init --advertise-addr <MANAGER-IP>
+    docker swarm init --autolock
+02) docker swarm update --autolock=true
+    docker swarm update --autolock=false
+03) docker swarm unlock
+04) docker swarm unlock-key
+    docker swarm unlock-key --rotate
+05) docker swarm join-token manager
+    docker swarm join-token worker
