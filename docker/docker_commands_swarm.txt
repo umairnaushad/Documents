@@ -43,9 +43,9 @@
     docker node update <MACHINE-NAME> --availability pasue|drain|active
     docker node update <MACHINE-NAME> --role manager
 
-service docker restart
-docker service ls
 
-
-
-docker-machine ssh manager1
+############### OTHERS ###############
+01) service docker restart
+02) service docker stop
+03) service docker start
+04) service docker status
