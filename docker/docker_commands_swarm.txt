@@ -1,3 +1,4 @@
+############### SWARM ###############
 01) docker swarm init --advertise-addr <MANAGER-IP>
     docker swarm init --autolock
 02) docker swarm update --autolock=true
@@ -5,5 +6,46 @@
 03) docker swarm unlock
 04) docker swarm unlock-key
     docker swarm unlock-key --rotate
-05) docker swarm join-token manager
-    docker swarm join-token worker
+05) docker swarm join-token manager             (to get join token as manager)
+    docker swarm join-token worker              (to get join token as worker)
+06) docker swarm leave
+07) docker swarm join --token <JOIN-TOKEN> <MANAGER-ADDR>     (to join swarm)
+
+    
+############### DOCKER-MACHINE ###############
+01) docker-machine ls
+02) docker-machine create  <MACHINE-NAME>        (virtual box should be installed for this)
+03) docker-machine ssh     <MACHINE-NAME>
+04) docker-machine env     <MACHINE-NAME>        (print environment variables)
+05) docker-machine active                        (print which machine is active)
+06) docker-machine config  <MACHINE-NAME>        (print connection config of machine)
+07) docker-machine ip      <MACHINE-NAME>        (print ip of the machine)
+08) docker-machine inspect <MACHINE-NAME>        (inspect information about the machine)
+09) docker-machine status  <MACHINE-NAME>
+10) docker-machine start   <MACHINE-NAME>
+11) docker-machine stop    <MACHINE-NAME>
+12) docker-machine restart <MACHINE-NAME>
+13) docker-machine kill    <MACHINE-NAME>
+14) docker-machine rm      <MACHINE-NAME>
+15) docker-machine scp                           (copy files between machines)
+16) docker-machine upgrade <MACHINE-NAME>        (upgrade docker version)
+17) docker-machine version <MACHINE-NAME>        (show current docker version)
+
+
+############### DOCKER NODE ###############
+01) docker node ls
+02) docker node ps         <MACHINE-NAME>         (list tasks running on a machine)
+03) docker node rm         <MACHINE-NAME>         (remove node from swarm)
+04) docker node inspect    <MACHINE-NAME>         (print information of node)
+05) docker node promote    <MACHINE-NAME>
+06) docker node demote     <MACHINE-NAME>
+07) docker node update 
+    docker node update <MACHINE-NAME> --availability pasue|drain|active
+    docker node update <MACHINE-NAME> --role manager
+
+service docker restart
+docker service ls
+
+
+
+docker-machine ssh manager1
