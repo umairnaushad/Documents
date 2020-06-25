@@ -1,0 +1,7 @@
+01) docker stack deploy
+    docker stack deploy --compose-file docker-compose.yml somestackname
+    docker stack deploy -c docker-compose.yml somestackname
+02) docker stack ls 	
+03) docker stack ps 	              (to list all tasks in a stack)
+04) docker stack rm 	
+05) docker stack services 	        (to list all services in a stack)
