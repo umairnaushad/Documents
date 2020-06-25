@@ -20,10 +20,7 @@
     
 
 
-41) docker service create alpine ping 8.8.8.8
-42) docker service ls
-43) docker service ps <ID>
-44) docker service update <ID> --replicas 3
+
 
 
 
