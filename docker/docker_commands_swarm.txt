@@ -10,6 +10,7 @@
     docker swarm join-token worker              (to get join token as worker)
 06) docker swarm leave
 07) docker swarm join --token <JOIN-TOKEN> <MANAGER-ADDR>     (to join swarm)
+08) docker swarm ca --rotate                    (to fix logs not showing error)
 
     
 ############### DOCKER-MACHINE ###############
