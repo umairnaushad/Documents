@@ -43,6 +43,9 @@
 07) docker node update 
     docker node update <MACHINE-NAME> --availability pasue|drain|active
     docker node update <MACHINE-NAME> --role manager
+    docker node update --label-add foo --label-add bar worker1
+    docker node update --label-add type=queue worker1
+    docker node update --availability drain <NODE>      (prevents the scheduler from assigning tasks to the node)
 
 
 ############### OTHERS ###############
