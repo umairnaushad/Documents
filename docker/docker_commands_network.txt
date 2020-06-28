@@ -1,0 +1,7 @@
+Docker manager nodes store the swarm state and manager logs in the /var/lib/docker/swarm/ 
+
+50) docker network ls
+51) docker network inspect
+52) docker network create --driver
+53) docker network connect
+54) docker network disconnect
