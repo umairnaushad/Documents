@@ -1,0 +1,31 @@
+
+Swarm mode has two types of services: replicated and global
+Good candidates for global services are monitoring agents, an anti-virus scanners or other types of containers that you want to run on every node in the swarm.
+A task is the atomic unit of scheduling within a swarm.each task invokes exactly one container.
+
+01) docker service create --mode global --name backend backend:latest
+    docker service create --mode replicated --name backend backend:latest
+    docker service create --name my_web \
+                          --replicas 3 \
+                          --publish published=8080,target=80 \
+                          --placement-pref 'spread=node.labels.datacenter' \
+                          --mount type=bind,src=<HOST-PATH>,dst=<CONTAINER-PATH>,readonly \
+                            nginx
+    docker service create --name=nginx \
+                          --mode global \
+                          --publish mode=host,target=80,published=8080 \
+                          --constraint node.labels.region==east \
+                          --mount type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>,volume-driver=<DRIVER>
+                            nginx:latest
+                            
+  
+02) docker service scale backend=10                             (cannot be applied on global services, this is a cluster management command, must be executed on manager node)
+    docker service scale backend=3 frontend=5
+03) docker service update --replicas=10 backend
+04) docker service ps <ID>                                      (list the tasks of one or more services)
+    docker service ls --filter name=frontend
+05) docker service rm 	                                        (remove one or more services)
+06) docker service logs <ID>           	                        (fetch the logs of a service or task)
+07) docker service inspect <ID> 	                              (display detailed information on one or more services)
+08) docker service update <ID> --network-add <NETWORK-NAME>
+    docker service update <ID> --network-rm  <NETWORK-NAME>
