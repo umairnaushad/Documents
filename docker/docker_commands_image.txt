@@ -4,7 +4,9 @@
 4)  docker image tag nginx:latest umairnaushad/nginx
 
 5)  docker image build -t <imageName> .
-    docker image build -t <imageName> -f DockerfileName
+    docker image build -t <imageName> -f DockerfileName .
+    docker image build -t repoT/imageT:1.0.0 -t repoT/imageT:latest .
+    docker build --no-cache.
 
 6)  docker image prune        (to remove up dangling images)
     docker image prune -a     (to remove all images not using)
@@ -18,12 +20,6 @@
 21) docker-conpose down
     docker-compose down --rmi local
     
-
-
-
-
-
-
 
 61) docker network create <name>
 62) docker network create --driver overlay <name>
