@@ -1,0 +1,16 @@
+docker run -d -p 5000:5000 --name registry registry:2
+
+docker login
+docker login localhost:8080
+
+docker logout
+
+docker search busybox --limit 5
+docker search busybox --filter is-official=true
+docker search --format "{{.Name}}: {{.StarCount}}" nginx
+docker search --format "table {{.Name}}\t{{.IsAutomated}}\t{{.IsOfficial}}" nginx
+
+docker image tag httpd:test fedora/httpd:version1.0.test
+docker image tag 0e5574283393 myregistryhost:5000/fedora/httpd:version1.0
+
+docker image push [OPTIONS] NAME[:TAG]
