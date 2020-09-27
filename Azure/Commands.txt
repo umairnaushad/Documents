@@ -1,8 +1,13 @@
 ---------- Resource Group ----------
-az group list --location locationName
 az group create --location locationName --name resourceName
 az group delete --location locationName --name reosurceName
+az group list --location locationName
+az group show --name resourceName
 
-Get-AzResourceGroup -Location locationName
 New-AzResourceGroup -Location locationName -Name resourceName
 Remove-AzResourceGroup -Location locationName -Name resourceName
+Get-AzResourceGroup -Location locationName
+Get-AzResourceGroup -Name resourceName
+
+---------- VM Images ----------
+az vm image list --output table
