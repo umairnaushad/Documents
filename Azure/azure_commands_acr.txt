@@ -1,0 +1,7 @@
+az acr create -g rg-acr1 -n acrUmairTest1 --sku basic
+az acr list -o table
+az acr login --name acrUmairTest1
+docker image tag busybox acrumairtest1.azurecr.io/aztest:v1
+docker image push acrumairtest1.azurecr.io/aztest:v1
+az acr repository list -n acrUmairTest1
+az acr repository show-tags -n acrUmairTest1 --repository aztest
