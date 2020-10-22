@@ -5,3 +5,9 @@ docker image tag busybox acrumairtest1.azurecr.io/aztest:v1
 docker image push acrumairtest1.azurecr.io/aztest:v1
 az acr repository list -n acrUmairTest1
 az acr repository show-tags -n acrUmairTest1 --repository aztest
+
+az aks create -g rg-test1 -n aksCluster1 --node-count 1 --enable-addons monitoring --generate-ssh-keys
+az aks list -o table
+az aks install-cli
+az aks get-credentials -g rg-test1 -n aksCluster1
+kubectl get nodes
