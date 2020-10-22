@@ -1,4 +1,5 @@
 Error: New-AzResourceGroup: No tenant found in the context
+(https://johan.driessen.se/posts/Fixing-the-missing-Azure-Context-in-Azure-Powershell/)
 Get-AzContext
 Clear-AzContext
 Connect-AzAccount
