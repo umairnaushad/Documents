@@ -1,0 +1,5 @@
+Error: New-AzResourceGroup: No tenant found in the context
+Get-AzContext
+Clear-AzContext
+Connect-AzAccount
+Get-AzContext
