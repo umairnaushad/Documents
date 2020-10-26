@@ -1,0 +1,9 @@
+$rg="rg-vn-1"
+$region="uaenorth"
+1 - $vn = New-AzVirtualNetwork `
+      -ResourceGroup $rg `
+      -Name myVirtualNetwork `
+      -Location $region `
+      -AddressPrefix 10.0.0.0/23
+
+2- Get-AzVirtualNetwork
