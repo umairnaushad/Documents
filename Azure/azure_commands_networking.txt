@@ -1,9 +1,11 @@
 $rg="rg-vn-1"
 $region="uaenorth"
-1 - $vn = New-AzVirtualNetwork `
-      -ResourceGroup $rg `
-      -Name myVirtualNetwork `
-      -Location $region `
-      -AddressPrefix 10.0.0.0/23
 
-2- Get-AzVirtualNetwork
+$subnet1=New-AzVirtualNetworkSubnetConfig -Name subnet1 -AddressPrefix 10.0.0.0/24
+$subnet2=New-AzVirtualNetworkSubnetConfig -Name subnet2 -AddressPrefix 10.0.1.0/24
+
+$vn1=New-AzVirtualNetwork -Name vn1 -Location $region -AddressPrefix 10.0.0.0/22 -ResourceGroup $rg -Subnet $subnet1,$subnet2
+
+$subnet3=Add-AzVirtualNetworkSubnetConfig -Name subnet3 -AddressPrefix 10.0.2.0/24 -VirtualNetwork $vn1
+
+$vn1 | Set-AzVirtualNetwork
