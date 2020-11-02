@@ -16,6 +16,10 @@ az provider register --namespace 'Microsoft.PolicyInsights'
 (Get-AzResourceGroup -Name rgName).Tags
 az group show -name rgName --query tags
 
+---------- Custom Role ----------
+az role definition create --role-definition ./RoleDefinition.json
+New-AzRoleDefinition -InputFile ./RoleDefinition.json
+
 
 ---------- Resource Group ----------
 az group create --location locationName --name resourceName
