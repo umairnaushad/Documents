@@ -12,6 +12,10 @@ New-AzResourceGroupDeployment -Name deploy1 -ResourceGroupName $rg.ResourceGroup
 az provider register --namespace 'Microsoft.PolicyInsights'
 
 
+---------- Get Tags ----------
+(Get-AzResourceGroup -Name rgName).Tags
+az group show -name rgName --query tags
+
 
 ---------- Resource Group ----------
 az group create --location locationName --name resourceName
