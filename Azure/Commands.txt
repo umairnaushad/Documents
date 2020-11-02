@@ -9,6 +9,8 @@ New-AzResourceGroupDeployment -Name deploy1 -ResourceGroupName $rg.ResourceGroup
 New-AzResourceGroupDeployment -Name deploy1 -ResourceGroupName $rg.ResourceGroupName -TemplateFile ./template-AccountStorage.json -TemplateParameterFile ./template-AccountStorageParameters.json
 
 
+az provider register --namespace 'Microsoft.PolicyInsights'
+
 
 
 ---------- Resource Group ----------
