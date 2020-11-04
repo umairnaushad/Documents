@@ -32,12 +32,3 @@ Remove-AzResourceGroup -Location locationName -Name resourceName
 Get-AzResourceGroup -Location locationName
 Get-AzResourceGroup -Name resourceName
 
----------- VM Images ----------
-az vm image list --output table
-az vm list-sizes --location uaenorth -o table
-az vm create --resource-group $rg --name linux_vm1 --size standard_b1s --image ubuntults --admin-user azureuser  --generate-ssh-keys --vnet-name vn1 --subnet subnet1
-ssh azureuser@40.123.195.245
-sudo apt-get -y update
-az vm open-port --port 80 --resource-group $rg --name linux_vm1
-
-ping myVm1 -c 4
