@@ -10,6 +10,7 @@
       -OpenPorts 80,443,3389  
 102) Stop-AzVM -Name vm-win1 -ResourceGroup $rg.ResourceGroupName
 103) Start-AzVM -Name vm-win1 -ResourceGroup $rg.ResourceGroupName
+104) Set-AzVm -Redeploy -Name vm-win1 -ResourceGroupName $rg.ResourceGroupName
 
 201) az vm image list --output table
 202) az vm list-sizes --location uaenorth -o table
