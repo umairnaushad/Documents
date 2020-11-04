@@ -1,1 +1,43 @@
+---------- VM Images ----------
+101) new-AzVM -Name vm_win1 `
+      -ResourceGroup $rg.ResourceGroupName `
+      -Size standard_b1s `
+      -Image Win2016DataCenter `
+      -VirtualNetworkName vn1 `
+      -SubnetName subnet1 `
+      -SecurityGroupName sg1 `
+      -PublicIpAddressName publicIp1 `
+      -OpenPorts 80,443,3389  
+102) Stop-AzVM -Name vm-win1 -ResourceGroup $rg.ResourceGroupName
+103) Start-AzVM -Name vm-win1 -ResourceGroup $rg.ResourceGroupName
 
+201) az vm image list --output table
+202) az vm list-sizes --location uaenorth -o table
+203) az vm create --resource-group $rg.ResourceGroupName `
+        --name linux_vm1 `
+        --size standard_b1s `
+        --image ubuntults `
+        --admin-user azureuser `
+        --generate-ssh-keys `
+        --vnet-name vn1 `
+        --subnet subnet1
+
+az vm create --name vm_liniux1 `
+>> --resource-group $rg.ResourceGroupName `
+>> --image ubuntults `
+>> --admin-user userazure `
+>> --admin-password user@AZURE@1 `
+>> --generate-ssh-keys `
+>> --size standard_b1s `
+>> --vnet-name vnet1 `
+>> --subnet subnet1 `
+>> --nsg sg1 `
+>> --publicIPName publicIp `
+>> --open-port 80,443,3389
+
+
+ssh azureuser@40.123.195.245
+sudo apt-get -y update
+az vm open-port --port 80 --resource-group $rg --name linux_vm1
+
+ping myVm1 -c 4
