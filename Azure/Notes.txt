@@ -1,0 +1,11 @@
+Azure AD is not a cloud version of Windows Server Active Directory
+ A tenant represents the organization and the default directory assigned to it.
+ Subscriptions in Azure are both a billing entity and a security boundary
+ Each subscription also has a single account owner
+ subscription billing can be transfered to another account 
+ One user can be in multiple Azure AD
+ Azure AD region cannot be changed later
+ Azure AD Connect is a separate service that allows you to synchronize a traditional Active Directory with your Azure AD instance
+ 
+ 
+ Azure AD => Subscriptions => rg => resources
