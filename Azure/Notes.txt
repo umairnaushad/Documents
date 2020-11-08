@@ -11,6 +11,17 @@ Azure AD is not a cloud version of Windows Server Active Directory
  Custom role creation requires Azure AD Premium P1 or P2 and cannot be done in the free tier.
  Azure AD Connect replaces older versions of identity integration tools, such as DirSync and Azure AD Sync
  self-service password reset (SSPR)
+ The security questions method isn't available to accounts that are associated with an administrator role.
+ SSPR isn't available in the free edition of Azure AD.
+ Multiple subscriptions can be cpombined in a management group.
+ Azure AD Roles: (Global Administrator, User Administrator, Billiing Administrator)
+ RBAC Roles: (Owner, Contributor, Reader, User Access Administrator)
+
+ 
+ 
+ 
+ 
+ 
  
  New-AzureADGroup -Description "Marketing" -DisplayName "Marketing" -MailEnabled $false -SecurityEnabled $true -MailNickName "Marketing"
  
