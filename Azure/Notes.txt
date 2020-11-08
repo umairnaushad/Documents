@@ -19,9 +19,9 @@ Azure AD is not a cloud version of Windows Server Active Directory
 Azure RBAC roles apply to Azure resources, and Azure AD roles apply to Azure AD resources (particularly users, groups, and domains)
 By default, a Global Administrator doesn't have access to Azure resources.
 Role Assignment:
-Who (Security Principal)
-What (Role Definition)
-Where (Scope)
+Who (Security Principal) (User, Group, Application)
+What (Role Definition) (Read, Write, Delete)
+Where (Scope) (management Group, Subscription, Resource Group, Resource)
  
  
  
