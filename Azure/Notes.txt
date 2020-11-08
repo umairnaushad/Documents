@@ -6,6 +6,14 @@ Azure AD is not a cloud version of Windows Server Active Directory
  One user can be in multiple Azure AD
  Azure AD region cannot be changed later
  Azure AD Connect is a separate service that allows you to synchronize a traditional Active Directory with your Azure AD instance
+  Azure AD administrator can create security group
+  Dynamic user assignment in a group require Azure AD Premium P1 license
+ Custom role creation requires Azure AD Premium P1 or P2 and cannot be done in the free tier.
+ Azure AD Connect replaces older versions of identity integration tools, such as DirSync and Azure AD Sync
+ self-service password reset (SSPR)
  
+ New-AzureADGroup -Description "Marketing" -DisplayName "Marketing" -MailEnabled $false -SecurityEnabled $true -MailNickName "Marketing"
  
  Azure AD => Subscriptions => rg => resources
+
+scopes (subscriptions, resource groups, or resources)
