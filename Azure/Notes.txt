@@ -28,6 +28,9 @@ The name is limited to 512 characters for all types of resources except storage 
 ags aren't inherited from parent resources. 
 Not all resource types support tags, and tags can't be applied to classic resources.
 Resource locks can be applied to subscriptions, resource groups, and to individual resources
+If you are starting to migrate to the cloud, a useful tool you can use to predict your cost savings is the Total Cost of Ownership (TCO) calculator
+Resizing a VM requires it to be stopped, resized, and then restarted.
+PaaS is typically less expensive than IaaS.
 
  
  
