@@ -2,6 +2,15 @@
 az ad user create
 Remove-AzureADUser
 
-
 New-AzureADUser
 Remove-AzureADUser
+
+---------- custom role creation ----------
+az role definition create --role-definition vm-operator-role.json
+az role definition update --role-definition "<<path-to-json-file>>"
+az role definition delete --name "role name"
+az role assignment delete --role "Virtual Machine Operator"
+
+New-AzRoleDefinition -InputFile "vm-operator-role.json"
+Set-AzRoleDefinition -InputFile "<<path-to-json-file>>"
+Get-AzRoleDefinition "role name" | Remove-AzRoleDefinition
