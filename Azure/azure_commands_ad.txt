@@ -1,0 +1,7 @@
+---------- create a new user ----------
+az ad user create
+Remove-AzureADUser
+
+
+New-AzureADUser
+Remove-AzureADUser
