@@ -22,6 +22,13 @@ Role Assignment:
 Who (Security Principal) (User, Group, Application)
 What (Role Definition) (Read, Write, Delete)
 Where (Scope) (management Group, Subscription, Resource Group, Resource)
+Users with the roles User Access Administrator or Owner can create or assign custom roles in Azure RBAC.
+A resource can have up to 50 tags. 
+The name is limited to 512 characters for all types of resources except storage accounts, which have a limit of 128 characters. The tag value is limited to 256 characters for all types of resources. T
+ags aren't inherited from parent resources. 
+Not all resource types support tags, and tags can't be applied to classic resources.
+Resource locks can be applied to subscriptions, resource groups, and to individual resources
+
  
  
  
