@@ -32,7 +32,18 @@ If you are starting to migrate to the cloud, a useful tool you can use to predic
 Resizing a VM requires it to be stopped, resized, and then restarted.
 PaaS is typically less expensive than IaaS.
 
- 
+ For example, these resources can be moved:
+
+    Azure Storage accounts
+    Azure virtual machines
+    Azure virtual networks
+
+These resources can't be moved:
+
+    Azure Active Directory domain services
+    Azure Backup vaults
+    Azure App Service gateways
+
  
  
  
