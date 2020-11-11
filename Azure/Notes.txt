@@ -44,6 +44,36 @@ These resources can't be moved:
     Azure Backup vaults
     Azure App Service gateways
 
+    If you want to move a virtual machine, all of its dependants must go with it.
+    You can't move virtual machines with certificates in Azure Key Vault between subscriptions.
+    You can't move virtual machine scale sets with standard load balancers or a standard public IP.
+    You can't move any managed disks that are in availability zones to different subscriptions.
+
+When you start a move operation, the resource group holding your resources and the new destination resource group are locked. 
+Your moved resources don't change location.
+
+All data written to Azure Storage is automatically encrypted by Storage Service Encryption (SSE) with a 256-bit Advanced Encryption Standard (AES) cipher.
+By default, storage accounts accept connections from clients on any network
+Currently, Advanced Threat Protection for Azure Storage is available for the Blob service.
+Azure Files provides a cloud-based file share for storing and sharing files.
+Server Message Block (SMB)
+Storage Account:
+    Standard performance: Double-digit ms latency, 10,000 IOPS, 300-MBps bandwidth, HDD
+    Premium performance: Single-digit ms latency, 100,000 IOPS, 5-GBps bandwidth, SDD
+    
+    AzCopy 	Command-line tool that offers the best performance, especially for a low volume of small files.
+Robocopy 	Command-line tool shipped with Windows and Windows Server. AzCopy is written to be Azure aware and performs better.
+Azure Storage Explorer 	Graphical file management utility that runs on Windows, Linux, and macOS.
+Azure portal 	Use the portal to import files and folders.
+Azure File Sync 	Can be used to do the initial data transfer, and then uninstalled after the data is transferred.
+Azure Data Box 	If you have up to 35 TB of data and you need it imported in less than a week.
+Azure File Sync supports DACLs.
+AzCopy requires a shared access signature (SAS) to authorize access to the share.
+
+
+
+
+
  
  
  
