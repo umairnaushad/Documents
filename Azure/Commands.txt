@@ -32,3 +32,13 @@ Remove-AzResourceGroup -Location locationName -Name resourceName
 Get-AzResourceGroup -Location locationName
 Get-AzResourceGroup -Name resourceName
 
+
+az storage account create \
+--name <unique account name> \
+--resource-group <resource group name> \
+--sku Standard_GRS
+
+az storage share create \
+--account-name <unique account name> \
+--account-key <account key> \
+--name <share name>
