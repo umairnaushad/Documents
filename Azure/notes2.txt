@@ -1,0 +1,11 @@
+storage account name  must be globally unique within Azure
+Microsoft recommends that you use the General-purpose v2 option for new storage accounts.
+The OS disk has a maximum capacity of 2,048 GB
+Each data disk has a maximum capacity of 32,767 GB.
+Temporary disks are local to the server and aren't stored in a storage account.
+Because ephemeral OS disks reside locally to the host, they incur no storage costs and are free.
+Managed disks support 99.999% availability
+
+A unique feature of ultra disks is that you can adjust the IOPS and throughput values while they're running and without detaching them from the host virtual machine
+premium disk can't adjust performance without detaching these disks from their virtual machine.
+
