@@ -9,3 +9,19 @@ Managed disks support 99.999% availability
 A unique feature of ultra disks is that you can adjust the IOPS and throughput values while they're running and without detaching them from the host virtual machine
 premium disk can't adjust performance without detaching these disks from their virtual machine.
 
+Azure Import/Export provides a way for organizations to export data from Azure Storage to an on-premises location.export large amounts of data.
+By using the service, you send and receive physical disks that contain your data between your on-premises location and an Azure datacenter
+You can use the Import/Export service to export data from Azure Blob storage only. You can't export data that's stored in Azure Files.
+o import or export more moderate volumes of data to and from Azure Blob storage, consider using other tools like AzCopy or Azure Storage Explorer.
+If you need an online method to transfer massive amounts of data, you can use Azure Data Box Edge or Azure Data Box Gateway
+AzCopy is the ideal tool for copying small to moderate amounts of data as quickly as possible, and with the least cost and effort. 
+Azure Storage Explorer is a free tool that you can use to connect to Azure Storage and view data through a graphical user interface. It isn't suitable for moving more than the smallest amounts of data, and it can't be easily scripted.
+data box edge applies machine learning
+Offline transfer (
+    Data Box
+    Data Box Disk
+    Data Box Heavy
+)
+Azure Data Box family doesn't support export of data from Azure.
+Data Box Edge requires a dedicated high-bandwidth connection. It enables preprocessing of data,
+
