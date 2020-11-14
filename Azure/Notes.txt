@@ -15,18 +15,10 @@ Azure File Sync 	Can be used to do the initial data transfer, and then uninstall
 Azure Data Box 	If you have up to 35 TB of data and you need it imported in less than a week.
 Azure File Sync supports DACLs.
 AzCopy requires a shared access signature (SAS) to authorize access to the share.
-
-
-
-
-
- 
- 
- 
- 
- 
  New-AzureADGroup -Description "Marketing" -DisplayName "Marketing" -MailEnabled $false -SecurityEnabled $true -MailNickName "Marketing"
  
  Azure AD => Subscriptions => rg => resources
 
 scopes (subscriptions, resource groups, or resources)
+
+A single storage account has a fixed rate limit of 20,000 I/O operations/sec. This means that a single storage account is capable of supporting 40 standard virtual hard disks at full throttle.
