@@ -23,3 +23,4 @@ scopes (subscriptions, resource groups, or resources)
 
 A single storage account has a fixed rate limit of 20,000 I/O operations/sec. This means that a single storage account is capable of supporting 40 standard virtual hard disks at full throttle.
 Security groups can be associated to a network interface (for per host rules), a subnet in the virtual network (to apply to multiple resources), or both levels.
+The smallest subnet that is supported uses a /29 subnet mask. The largest supported subnet uses a /8 subnet mask.
