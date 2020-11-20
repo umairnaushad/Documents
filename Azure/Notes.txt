@@ -33,4 +33,4 @@ Application Gateway manages the requests that client applications can send to a 
 Basic load balancers can be used only with availability sets.
 
 Azure Load Balancer is limited to only load balancing and handling port-forwarding for the TCP and UDP protocols
-With ExpressRoute, your data doesn’t travel over the public internet
+With ExpressRoute, your data doesn’t travel over the public internet. ExpressRoute isnt encrypted
