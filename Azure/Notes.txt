@@ -24,3 +24,13 @@ scopes (subscriptions, resource groups, or resources)
 A single storage account has a fixed rate limit of 20,000 I/O operations/sec. This means that a single storage account is capable of supporting 40 standard virtual hard disks at full throttle.
 Security groups can be associated to a network interface (for per host rules), a subnet in the virtual network (to apply to multiple resources), or both levels.
 The smallest subnet that is supported uses a /29 subnet mask. The largest supported subnet uses a /8 subnet mask.
+Standard SKU public IP addresses always use the static allocation method.
+Standard IPs are secure by default and closed to inbound traffic. 
+Standard IPs are zone-redundant by default 
+Network security groups are assigned to a network interface or a subnet.
+
+Application Gateway manages the requests that client applications can send to a web app.
+Basic load balancers can be used only with availability sets.
+
+Azure Load Balancer is limited to only load balancing and handling port-forwarding for the TCP and UDP protocols
+With ExpressRoute, your data doesn’t travel over the public internet
